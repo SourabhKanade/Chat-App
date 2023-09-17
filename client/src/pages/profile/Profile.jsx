@@ -6,6 +6,7 @@ import Rightbar from "../../components/rightbar/Rightbar";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router";
+import ResponsiveAppBar from "../../components/topbar/Appbar";
 
 export default function Profile() {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
@@ -22,7 +23,8 @@ export default function Profile() {
 
   return (
     <>
-      <Topbar />
+      {/* <Topbar /> */}
+      <ResponsiveAppBar />
       <div className="profile">
         <Sidebar />
         <div className="profileRight">

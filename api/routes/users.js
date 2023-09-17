@@ -65,6 +65,7 @@ router.get("/friends/:userId", async (req, res) => {
       })
     );
     let friendList = [];
+    console.log(friends, friendList, "api_friends")
     friends.map((friend) => {
       const { _id, username, profilePicture } = friend;
       friendList.push({ _id, username, profilePicture });

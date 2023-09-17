@@ -7,6 +7,7 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
 import { io } from "socket.io-client";
+import ResponsiveAppBar from "../../components/topbar/Appbar";
 
 export default function Messenger() {
   const [conversations, setConversations] = useState([]);
@@ -18,6 +19,8 @@ export default function Messenger() {
   const socket = useRef();
   const { user } = useContext(AuthContext);
   const scrollRef = useRef();
+
+console.log(conversations, "conv")
 
   useEffect(() => {
     socket.current = io("ws://localhost:8900");
@@ -102,7 +105,8 @@ export default function Messenger() {
 
   return (
     <>
-      <Topbar />
+      {/* <Topbar /> */}
+      <ResponsiveAppBar />
       <div className="messenger">
         <div className="chatMenu">
           <div className="chatMenuWrapper">
